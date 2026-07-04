@@ -51,7 +51,7 @@ class Comment(models.Model):
 
 class ProjectAttachment(models.Model):
     project = models.ForeignKey(Project , on_delete=models.CASCADE , related_name="project_attachments")
-    file = models.FileField(upload_to='attachments/')
+    file = models.FileField(upload_to='project_attachments/')
     version = models.PositiveIntegerField(default=1)
     uploaded_by = models.ForeignKey(User, on_delete=models.CASCADE)
     uploaded_at = models.DateTimeField(auto_now_add=True)
